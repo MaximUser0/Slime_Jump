@@ -1,0 +1,434 @@
+body{
+    background-color: rgb(125, 250, 208);
+    overflow-x: hidden;
+    overflow-y: hidden;
+    margin: 0;
+    padding: 0;
+}
+.SceneHome{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    display: block;
+}
+.SceneGame{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: none;
+}
+.SceneDie{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: none;
+}
+.fon-poliaHome{
+    background-image: url(img/fon2.jpg);
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+.fon-poliaGame{
+    background-image: url(img/fon5.png);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+.fon-poliaDie{
+    background-image: url(img/fon4.jpg);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+.Settings{
+    position: absolute;
+    left: 4vw;
+    bottom: 4vw;
+    background-image: url(img/Nastroy2.png);
+    background-size: contain;
+    height: 5vw;
+    width: 5vw;
+}
+.zagolovok{
+    font-size: 10vw;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 2px 3px 7px rgba(0, 0, 0, 0.25);
+    color: white;
+    width: 100%;
+    margin-top: 5vw;
+    text-align: center;
+}
+.blockMoney{
+    position: absolute;
+    bottom: 4vw;
+    right: 4vw;
+    display: flex;
+}
+.blockMoneyGame{
+    position: absolute;
+    z-index: 1;
+    bottom: 4vw;
+    left: 5vw;
+    display: flex;
+}
+.countMoney{
+    margin: 0;
+    margin-top: 0.1vw;
+    font-size: 4vw;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+}
+.imgMoney{
+    width: 5vw;
+    height: 5vw;
+}
+.MoneyGame{
+    width: 4vw;
+    height: 4vw;
+    position: absolute;
+    bottom: 2vw;
+    left: 2vw;
+}
+.center{
+    height: 5vw;
+    width: 5vw;
+    position: absolute;
+    top: 47.4vw;
+    left: 46vw;
+    background-image: url("img/slime\ \(2\).png");
+    background-position: left;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.left{
+    background-position: left;
+}
+.right{
+    background-position: right;
+}
+.animate{
+    animation: jump 200ms linear;
+}
+.animateM{
+    animation: jumpM 200ms linear;
+}
+@keyframes jump{
+    from{height: 5vw; width: 5vw; padding-left: 0; margin-top: 0;}
+    30%{height: 4vw; width: 5.5vw; padding-left: 0.5vw; margin-top: 1.5vw;}
+    to{height: 5vw; width: 5vw; padding-left: 0; margin-top: 0;}
+}
+@keyframes jumpM{
+    from{height: 10vw; width: 10vw; padding-left: 0; margin-top: 0;}
+    40%{height: 5vw; width: 13w; padding-left: 3w; margin-top: 5vw;}
+    to{height: 10vw; width: 10vw; padding-left: 0; margin-top: 0;}
+}
+.Monster{
+    width: 5vw;
+    height: 5vw;
+    position: absolute;
+    top: 0vw;
+    left: -35vw;
+    background-image: url(img/Monster.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.MonsterKill{
+    background-image: url(img/Die.png);
+    background-size: 100% 100%;
+}
+.hr {
+    width: 70vw;
+    height: 3.9vw;
+    background-image: url(img/floor.png);
+    background-size: auto 4vw;
+    border: none;
+    position: absolute;
+    top: 96vh;
+    left: 15vw;
+}
+.LeftTree{
+    height: 100%;
+    width: 30vw;
+    background-image: url(img/leftTree.png);
+    background-repeat: no-repeat;
+    background-size: 25vw 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.RightTree{
+    height: 100%;
+    width: 30vw;
+    background-image: url(img/rightTree.png);
+    background-size: 25vw 100%;
+    background-repeat: no-repeat;
+    background-position: right;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.platforma{
+    width: 8vw;
+    height: 2.1vw;
+    position: absolute;
+    top:0vw;
+    left:0vw;
+    background-image: url(img/platforma.png);
+    background-size: 8vw 2.1vw;
+    visibility: hidden;
+}
+.DopStylePlatform1{
+    background-image: url(img/platforma2.png);
+}
+.DopStylePlatform2{
+    background-image: url(img/platforma3.png);
+}
+.Schot{
+    width: 11vw;
+    height: 5.4vw;
+    font: 6vw sans-serif;
+    color: white;
+    text-align: center;
+    padding-top: 0.8vw;
+    position: absolute;
+    top:2vw;
+    right: 2vw;
+}
+.SchotP{
+    margin: 0;
+    padding: 0;
+}
+.NOjump{
+    width: 14vw;
+    height: 5.4vw;
+    border: none;
+    border-radius: 2.4vw;
+    font: 2vw sans-serif;
+    color: white;
+    text-align: center;
+    padding-top: 0.8vw;
+    background-color: rgb(27, 118, 46);
+    position: absolute;
+    top:2vw;
+    left:5vw;
+    visibility: hidden;
+}
+.StartGame{
+    position: absolute;
+    top: 45vh;
+    left: 41.5vw;
+    width: 12vw;
+    height: 12vw;
+    background-image: url(img/Start.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.HomeButton{
+    position: absolute;
+    right: 4vw;
+    bottom: 4vw;
+    background-image: url(img/home3.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    height: 5vw;
+    width: 5vw;
+}
+.fon-poliaGame{
+    margin: 0;
+    padding: 0;
+    z-index: 0;
+    background-image: url(img/fon5.png);
+    background-size: auto 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.img-2{/*Фон экрана смерти*/
+    background-image: url(img/fon4.jpg);
+    background-size: 100% auto;
+}
+.StopGame{
+    display: flex;
+    position: absolute;
+    top: 4vw;
+    left: 4vw;
+    width: 7vw;
+    height: 5vw;
+}
+.Stop{
+    margin: 0;
+    padding: 0;
+    background-color: rgb(255, 255, 255);
+    height: 5vw;
+    width: 1.7vw;
+    margin-left: 1vw;
+    border-radius: 0.6vw;
+}
+.error{
+    padding: 1.5vw;
+    width: 25vw;
+    height: 15vw;
+    position:absolute;
+    top: 35vh;
+    left: 35vw;
+    background-color: rgb(27, 118, 46);
+    color: white;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 1vw;
+    z-index: 2;
+    display: none;
+}
+.error h2{
+     margin: 0;
+     margin-top: 0.5vw;
+}
+.error button{
+    border: none;
+    width: 10vw;
+    height: 2.5vw;
+    font-size: 1vw;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color:rgb(125, 250, 208);
+}
+.b1{
+    z-index: 10;
+    position: absolute;
+    top:10vw;
+    left:10vw;
+    border-radius: 50%;
+    background-color: aliceblue;
+    padding: 1vw 1.6vw;
+    visibility: hidden;
+}
+.b2{
+    z-index: 10;
+    position: absolute;
+    top:10vw;
+    left:90vw;
+    border-radius: 50%;
+    background-color: aliceblue;
+    padding: 1vw 1.6vw;
+    visibility: hidden;
+}
+/*@media (max-width:800px){
+};*/
+@media (max-width:440px){
+    .fon-polia{
+        background-size: auto 100%;
+    }
+    .center{
+        height: 10vw;
+        width: 10vw;
+        position: absolute;
+        top: 90vh;
+        left: 46vw;
+        background-size: 10vw 100%;
+    }
+    .platforma{
+        width: 15vw;
+        height: 5vw;
+        background-size: 100% 100%;
+    }
+    .Schot{
+        text-align: right;
+        font: 10vw sans-serif;
+        top:3vw;
+        right: 5vw;
+    }
+    .Settings{
+        width: 12vw;
+        height: 12vw;
+    }
+    .NOjump{/*--------->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>---------*/
+        width: 27vw;
+        height: 11vw;
+        border-radius: 5vw;
+        font: 4vw sans-serif;
+    }
+    .StartGame{
+        top: 43vh;
+        left: 35vw;
+        width: 30vw;
+        height: 30vw;
+    }
+    .zagolovok{
+        text-align: center;
+        font-size: 14vw;
+        top: 0vw;
+        left: -73vw;
+        width: 80vw;
+    }
+    .fon-polia{
+        background-position-x: -130vw;
+    }
+    .hr{
+        width: 100%;
+        left: 0;
+        height: 6vh;
+        background-size: auto 6vh;
+    }
+    .LeftTree{
+        visibility: hidden;
+    }
+    .RightTree{
+        visibility: hidden;
+    }
+    .StopGame{
+        top: 5vw;
+        left: 5vw;
+        width: 12vw;
+        height: 10vw;
+    }
+    .Stop{
+        height: 10vw;
+        width: 3vw;
+        margin-left: 2vw;
+        border-radius: 1vw;
+    }
+    .error{
+        padding: 5vw;
+        width: 65vw;
+        height: 40vw;
+        top: 37vh;
+        left: 13vw;
+        font-size: 3vw;
+    }
+    .error h2{
+         margin-top: 0.5vw;
+         font-size: 4.5vw;
+    }
+    .error button{
+        width: 30vw;
+        height: 7vw;
+        font-size: 3vw;
+    }
+    /*.b1{
+        visibility: visible;
+    }
+    .b2{
+        visibility: visible;
+    }*/
+}; 

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS_Animatsia</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <div class="SceneHome">
+        <div class="fon-poliaHome"></div>
+        <h2 class="zagolovok">Slime Jump</h2>
+        <div class="StartGame" onclick="Start()"></div>
+        <div class="Settings"></div>
+        <div class="blockMoney">
+            <p class="countMoney">0</p>
+            <img class="imgMoney" src="img/money.png">
+        </div>
+    </div>
+    <div class="SceneGame">
+        <div class="fon-poliaGame"></div>
+        <div class="blockMoneyGame">
+            <p class="countMoney">0</p>
+            <img class="imgMoney" src="img/money.png">
+        </div>
+        <div id="SceneGame"></div>
+        <div class="center" id="center"></div>
+        <div class="Monster" id="Monster"></div>
+        <div class="b1" id="b1"><</div>
+        <div class="b2" id="b2">></div>
+        <div class="hr"></div>
+        <div class="LeftTree"></div>
+        <div class="RightTree"></div>
+        <div class="Schot"><p class="SchotP">0</p></div>
+        <div class="StopGame"><div class="Stop"></div><div class="Stop"></div></div>
+    </div>
+    <div class="SceneDie">
+        <h2 class="zagolovok">Game over!</h2>
+        <div class="fon-poliaDie"></div>
+        <div class="StartGame" onclick="Start()"></div>
+        <div class="Settings"></div>
+        <div class="HomeButton" onclick="BackToMenu()"></div>
+    </div>
+    <div class="error">
+        <h2>Разрешение экрана было изменено.</h2>
+        <p>Для продолжения верните прежнюю версию или перезагрузите игру (Внимание прогресс будет потерян!).</p>
+        <button onclick="Reset()">Перезагрузить</button>
+    </div>
+
+    <!-- <div class="fon-polia"></div> -->
+    <div class="NOjump" id="NOjump">Выключить автопрыжок</div>
+
+    <script src="script1.js"></script>
+</body>
+</html>
