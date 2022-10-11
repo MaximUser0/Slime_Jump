@@ -172,7 +172,6 @@ function Kadr(){//Управляет движением персонажа, из
 //2.1 Движение
 
 function JumpPhysics(){ //Управляет физикой прыжка (запускается Kadr)
-
     cenX = cenX+((cenHeight/10)*n);
     center.style.left = cenX + "vw";
     cenY = cenY-(sh*sh*k*cenHeight/47);
@@ -191,6 +190,9 @@ function JumpOffTheBlock(){ //Отслеживает касание блока �
          setTimeout(function(){center.classList.remove('animateM'); },250);}
          clearInterval(stopKadr); KadrOne=1;
          dooble = 0;
+         if(centerArr[i][2]==3){ 
+            TakeMoney(i);
+         }
          if(centerArr[i][2]==1){ 
             let array = DespaunPlatform(i,centerArr);
             centerArr.length = 0;
@@ -254,6 +256,29 @@ function Monster(){ //Управляет движением монстра (за
         if(monsterX>15&&monsterFace==1) {monsterX-=0.5; monster.style.left=monsterX+"vw";}
         if(monsterX<=15&&monsterX!=-35) {monsterFace=0;}
     }
+}
+
+//Update: Money
+
+async function SpaunMoneyInWindow(elem){//Спаунит монетку
+        MoneyInWindowBool = true;
+        console.log(elem);
+        elem.innerHTML = '<img class="MoneyGame" src="img/money.png">';
+        //elem.insertAdjacentHTML('afterbegin','<img class="MoneyGame" src="img/money.png">');
+}
+function DespaunMoney(){//Удаляет монетку
+    SpaunMoney = -1;
+    MoneyInWindowBool = true;
+    const elem = document.querySelector(".MoneyGame");
+    document.querySelector('.SceneGame').parentNode.removeChild(elem);
+}
+
+function TakeMoney(i){
+    centerArr[i][2] = 0;
+    document.getElementById(centerArr[i][3]).innerHTML = '';
+    MoneyPlayer ++;
+    document.getElementById('count1').innerText = MoneyPlayer;
+    document.getElementById('count2').innerText = MoneyPlayer;
 }
 
 function Sdvig(){//Движение платформ и низкочастотные проверки - Контроллер кадра(низкочастотный)
@@ -341,7 +366,7 @@ function SpaunPlatform(){
     if(zoom==1){Y = centerArr[num][1] - 20*koef;}
     const name = centerArr[num][3]+1;
     let style = RandomStyle(document.getElementById(name));
-    if(style==3){type=1;style=0;}
+    if(style==3){type=1;}
     centerArr[num+1] = [X,Y,style,name];
     TPplatform(num+1);
     PlatformLocate(centerArr[num+1],type);
@@ -366,6 +391,7 @@ function PlatformLocate(array,type){
     platf.style.top = array[1]+"vw";
     platf.style.left = array[0]+"vw";
     platf.style.visibility = "visible";
+    if(array[2]==1){platf.classList.add('DopStylePlatform1')}
     if(type==1){SpaunMoneyInWindow(platf);}
 }
 function TPplatform(i){
@@ -383,13 +409,13 @@ function TPplatform(i){
 }
 function RandomStyle(){//Рандомные типы платформ
         let Ran = 0, MRan = Math.random() * 10; 
-        Ran += 10 - 10/Metrag;
+        Ran += 10 - 10/(Metrag/20);
         Ran = MRan * Ran;
         let Is = 0;
         if (Ran>70&&Ran<=100){Is = 1;}
         if (Ran>40&&Ran<=70){Is = 2;}
-        if(Ran<100&&Ran>90){SpaunMonster();}
-        if(Ran<80&&Ran>60){Is = 3;}
+        if(Ran<95&&Ran>85){SpaunMonster();}
+        if(Ran<85&&Ran>80){Is = 3;}
         return Is;
 };
 function DespaunPlatform(n,array){
@@ -413,22 +439,6 @@ function DespaunAllPlatform(array){
     }
     centerArr.length = 0;
     centerArr.push.apply(centerArr, [[0,0,0,0]]);
-}
-//Update: Money
-
-async function SpaunMoneyInWindow(elem){//Спаунит монетку
-    if(MoneyInWindowBool == false){
-        MoneyInWindowBool = true;
-        console.log(elem);
-        elem.innerHTML = '<img class="MoneyGame" src="img/money.png">';
-        //elem.insertAdjacentHTML('afterbegin','<img class="MoneyGame" src="img/money.png">');
-    }
-}
-function DespaunMoney(){//Удаляет монетку
-    SpaunMoney = -1;
-    MoneyInWindowBool = true;
-    const elem = document.querySelector(".MoneyGame");
-    document.querySelector('.SceneGame').parentNode.removeChild(elem);
 }
 
 //Вылезающие платформы
